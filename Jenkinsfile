@@ -59,7 +59,7 @@ pipeline{
                         '''
                     }
                 }
-                stage("Deploy To Kubernetes")
+                stage("Deploy To Kubernes")
                 {
                     steps
                     {
