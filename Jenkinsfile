@@ -6,20 +6,20 @@ pipeline{
     }
     stages{
         
-        // stage("Clean")
-        // {
-        //     steps
-        //     {
-        //         sh 'mvn clean'
-        //     }
-        // }
-        // stage("Compile")
-        // {
-        //     steps
-        //     {
-        //         sh 'mvn compile'
-        //     }
-        // }
+        stage("Clean")
+        {
+            steps
+            {
+                sh 'mvn clean'
+            }
+        }
+        stage("Compile")
+        {
+            steps
+            {
+                sh 'mvn compile'
+            }
+        }
         stage("Test")
         {
             when
@@ -28,8 +28,9 @@ pipeline{
             }
             steps
             {
-                // sh 'mvn test'
-                sh 'echo hello'
+                sh 'mvn test'
+                
+                
             }
         }
         stage("Push to DockerHub")
