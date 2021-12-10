@@ -58,6 +58,15 @@ pipeline{
                         echo "Deployed"
                         '''
                     }
+                }
+                stage("Deploy To Kubernetes")
+                {
+                    steps
+                    {
+                        sh'''
+                        echo "Deployed"
+                        '''
+                    }
                 }   
             }
         }
