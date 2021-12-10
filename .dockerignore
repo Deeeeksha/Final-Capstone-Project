@@ -1,0 +1,5 @@
+target/*
+LICENSE
+.git/*
+readme.md
+.gitignore
