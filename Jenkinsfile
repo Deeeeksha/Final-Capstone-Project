@@ -41,6 +41,13 @@ pipeline{
             }
             stages
             {
+                stage("Package")
+                {
+                    steps
+                    {
+                        sh 'mvn package'
+                    }
+                }
                 stage("Push to DockerHub")
                 {
                     steps
