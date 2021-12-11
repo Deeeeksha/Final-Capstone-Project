@@ -100,7 +100,7 @@ pipeline{
             emailext attachLog: true, body: '$DEFAULT_CONTENT', subject: '$DEFAULT_SUBJECT', to: 'dipayan.pramanik@knoldus.com'  
         }
         success{
-            archiveArtifacts artifacts: '**/*.jar'
+            archiveArtifacts allowEmptyArchive: true, artifacts: '**/*.jar', excludes: '.mvn/*', onlyIfSuccessful: true
             cleanWs()
         }
         always{

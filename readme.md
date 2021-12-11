@@ -303,32 +303,7 @@ Some of the important api endpoints are as follows :
 - http://localhost:8080/api/v1/reservation/tripschedules (HTTP:GET)
 - http://localhost:8080/api/v1/reservation/bookticket (HTTP:POST)
 
-## Running the server in Docker Container ##
-##### Docker #####
-Command to build the container :
 
-```
-docker build -t spring/starterkit .
-```
-
-Command to run the container :
-
-```
-docker run -p 8080:8080 spring/starterkit
-```
-
-Please **note** when you build the container image and if mongodb is running locally on your system, you will need to provide your system's IP address (or cloud hosted database's IP) in the application.properties file to be able to connect to the database from within the container.
-
-##### Docker Compose #####
-Another alternative to run the application is to use the docker-compose.yml file and utility. To build the application using docker-compose simply execute the following command :
-```
-docker-compose build
-```
-
-And to run the application, please execute the following command :
-```
-docker-compose up
-```
 
 ## API Documentation ##
 Its as important to document(as is the development) and make your APIs available in a readable manner for frontend teams or external consumers. The tool for API documentation used in this starter kit is Swagger3, you can open the same inside a browser at the following url -
