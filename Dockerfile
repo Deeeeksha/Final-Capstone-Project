@@ -4,7 +4,8 @@ WORKDIR /spring-app
 
 COPY . .
 
-RUN mvn package -DskipTests
+RUN mvn package
+
 
 
 FROM openjdk:18-jdk-alpine3.15
@@ -13,9 +14,9 @@ WORKDIR /spring-app
 
 COPY --from=builder /spring-app/target/springboot-starterkit-1.0.jar .
 
-ENV MONGODB_TABLE Users
-
 EXPOSE 8080
+
+ENV MONGODB_TABLE=Users MONGODB_PORT=27017 MONGODB_HOST=mongo
 
 ENTRYPOINT ["java", "-jar"]
 
