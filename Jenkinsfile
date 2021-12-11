@@ -48,6 +48,13 @@ pipeline{
                         sh 'mvn package'
                     }
                 }
+                stage("Install")
+                {
+                    steps
+                    {
+                       sh 'echo Install'
+                    }
+                }
                 stage("Push to DockerHub")
                 {
                     steps
