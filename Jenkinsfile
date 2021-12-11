@@ -41,6 +41,13 @@ pipeline{
             }
             stages
             {
+                stage("Package")
+                {
+                    steps
+                    {
+                        sh 'mvn package'
+                    }
+                }
                 stage("Push to DockerHub")
                 {
                     steps
@@ -51,6 +58,15 @@ pipeline{
                     }
                 } 
                 stage("Deploy To Kubernetes")
+                {
+                    steps
+                    {
+                        sh'''
+                        echo "Deployed"
+                        '''
+                    }
+                }
+                stage("Deploy To Kubernes")
                 {
                     steps
                     {
