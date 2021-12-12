@@ -1,8 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: mydeploy
   name: capstone-application
   namespace: capstone
 spec:
@@ -22,14 +20,11 @@ spec:
         name: capstone-application
         env:
           - name: MONGODB_TABLE
-            value: "Users"
+            value: "Capstone"
           - name: MONGODB_PORT
             value: "27017"
           - name: MONGODB_HOST
-            value: "monogdb-0.mongodb,mongodb-1.mongodb,mongodb-2.mongodb"
-          - name: MONGODB_USER
-            value: "root"
-          - name: MONGODB_PW
-            value: "root123"
-          - name: MONGODB_AUTH
-            value: "admin"
+            valueFrom:
+              configMapKeyRef:
+                name: mongo-connect
+                key: mongo-url
