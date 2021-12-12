@@ -1,0 +1,10 @@
+---
+- import_taska: install-java.yml
+
+- import_tasks: add-key.yml
+
+- import_tasks: add-repo.yml
+
+- import_tasks: install-jenkins.yml
+  notify:
+    - restart jenkins
