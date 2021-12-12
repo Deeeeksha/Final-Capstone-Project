@@ -15,7 +15,7 @@ spec:
     spec:
       terminationGracePeriodSeconds: 10
       containers:
-      - image: dipayanp007/capstone:latest
+      - image: dipayanp007/capstone:${GIT_COMMIT}-build-${BUILD_NUMBER}
         imagePullPolicy: IfNotPresent
         name: capstone-application
         env:
