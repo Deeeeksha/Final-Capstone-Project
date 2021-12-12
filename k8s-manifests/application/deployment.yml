@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mydeploy
+  name: capstone-application
+  namespace: capstone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: capstone
+  template:
+    metadata:
+      labels:
+        app: capstone
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - image: dipayanp007/capstone:latest
+        imagePullPolicy: IfNotPresent
+        name: capstone-application
+        env:
+          - name: MONGODB_TABLE
+            value: "Users"
+          - name: MONGODB_PORT
+            value: "27017"
+          - name: MONGODB_HOST
+            value: "monogdb-0.mongodb,mongodb-1.mongodb,mongodb-2.mongodb"
+          - name: MONGODB_USER
+            value: "root"
+          - name: MONGODB_PW
+            value: "root123"
+          - name: MONGODB_AUTH
+            value: "admin"
