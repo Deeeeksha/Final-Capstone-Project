@@ -86,7 +86,7 @@ pipeline{
                 {
                     steps
                     {
-                        sh 'echo Deploy'
+                        kubernetesDeploy configs: '**/deployment.yml', kubeConfig: [path: ''], kubeconfigId: 'kubeconfig', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
                     }
                 }   
             }
