@@ -30,3 +30,5 @@ db/data/*
 
 #mac-os
 *.DS_Store
+k8s-manifests/grafana
+k8s-manifests/Prometheus
