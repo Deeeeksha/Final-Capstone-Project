@@ -4,4 +4,4 @@ metadata:
   name: mongo-connect
   namespace: capstone
 data:
-  mongo-url: mongodb-0.mongodb.capstone.svc.cluster.local
+  mongo-url: mongodb-0.mongodb
