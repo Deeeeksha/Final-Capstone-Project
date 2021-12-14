@@ -12,6 +12,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: capstone-application
+                name: nodeport
                 port:
                   number: 8080
