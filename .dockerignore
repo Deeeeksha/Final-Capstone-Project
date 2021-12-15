@@ -3,3 +3,5 @@ LICENSE
 .git/*
 readme.md
 .gitignore
+k8s-*
+ansible
