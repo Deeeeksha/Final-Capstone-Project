@@ -18,16 +18,7 @@ spec:
       securityContext:
         fsGroup: 1001
       containers:
-        - name: mongod-exporter
-          imagePullPolicy: IfNotPresent
-          image: bitnami/mongodb-exporter:0.10.0-debian-10-r85
-          ports:
-            - containerPort: 9216
-          # args:
-          #   - "--compatible-mode"
-          env:
-          - name: MONGODB_URI
-            value: 'mongodb://localhost:27017'
+        
         - name: mongodb
           image: bitnami/mongodb
           imagePullPolicy: IfNotPresent

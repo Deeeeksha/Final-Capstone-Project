@@ -1,0 +1,8 @@
+mongodb:
+  uri: "mongodb://mongodb-clusterip.capstone.svc.cluster.local:27017"
+
+serviceMonitor:
+  namespace: monitoring
+  additionalLabels:
+    release: "prometheus"
+  
