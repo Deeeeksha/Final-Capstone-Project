@@ -1,5 +1,5 @@
 ---
-- import_taska: install-java.yml
+- import_tasks: install-java.yml
 
 - import_tasks: add-key.yml
 
